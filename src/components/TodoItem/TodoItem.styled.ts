@@ -4,6 +4,7 @@ import { Theme } from "../../types/types";
 export const Item = styled.li`
   display: flex;
   gap: 20px;
+
   border: 1px solid #a1a1a1;
   padding: 10px;
 `;
@@ -15,6 +16,7 @@ export const ChooseTodo = styled.button`
 
   width: 30px;
   height: 30px;
+
   border: 1px solid #a1a1a1;
   border-radius: 15px;
   background-color: transparent;

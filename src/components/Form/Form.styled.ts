@@ -3,12 +3,12 @@ import { Form, Field } from "formik";
 import { Theme } from "../../types/types";
 
 export const FormContainer = styled(Form)`
-  border: 1px solid #a1a1a1;
-  padding: 10px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  border: 1px solid #a1a1a1;
+  padding: 10px;
 `;
 
 export const FieldContainer = styled(Field)`

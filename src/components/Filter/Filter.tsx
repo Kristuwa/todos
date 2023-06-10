@@ -1,12 +1,7 @@
 import { FC } from "react";
-import {
-  BottomPanel,
-  BottomText,
-  ButtonFilter,
-  ButtonsList,
-} from "./Filter.styled";
-
-const buttons: string[] = ["All", "Active", "Completed"];
+import { BottomPanel, BottomText } from "./Filter.styled";
+import { ButtonFilter } from "../ButtonItem/ButtonItem.styled";
+import { ListButtons } from "../ListButtons/ListButtons";
 
 interface FilterProps {
   handleChooseFilter: (button: string) => void;
@@ -24,19 +19,10 @@ export const Filter: FC<FilterProps> = ({
   return (
     <BottomPanel>
       <BottomText>{itemsActive} items left</BottomText>
-      <ButtonsList>
-        {buttons.map((button) => (
-          <li key={button}>
-            <ButtonFilter
-              type="button"
-              className={button === buttonChoose ? "active" : "non-active"}
-              onClick={() => handleChooseFilter(button)}
-            >
-              {button}
-            </ButtonFilter>
-          </li>
-        ))}
-      </ButtonsList>
+      <ListButtons
+        buttonChoose={buttonChoose}
+        handleChooseFilter={handleChooseFilter}
+      />
       <ButtonFilter type="button" onClick={handleClearCompleted}>
         Clear completed
       </ButtonFilter>

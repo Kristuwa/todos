@@ -6,6 +6,7 @@ export const Title = styled.h1`
   font-size: 60px;
   text-align: center;
   color: ${(p: { theme: Theme }) => p.theme.color.primaryColor};
+  margin-bottom: 20px;
 `;
 
 export const MainContainer = styled.div`
