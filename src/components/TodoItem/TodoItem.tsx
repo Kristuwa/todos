@@ -22,8 +22,8 @@ export const TodoItem: FC<TodoItemProps> = ({ task, handleIsDone }) => {
       </ChooseTodo>
       <TodoText
         style={{
-          textDecoration: isDone ? "line-through" : "#212121",
-          color: isDone ? "#a1a1a1" : "none",
+          textDecoration: isDone ? "line-through" : "none",
+          color: isDone ? "#a1a1a1" : "#212121",
         }}
       >
         {todo}
