@@ -1,4 +1,10 @@
 import { FC } from "react";
+import {
+  BottomPanel,
+  BottomText,
+  ButtonFilter,
+  ButtonsList,
+} from "./Filter.styled";
 
 const buttons: string[] = ["All", "Active", "Completed"];
 
@@ -6,32 +12,34 @@ interface FilterProps {
   handleChooseFilter: (button: string) => void;
   buttonChoose: string;
   handleClearCompleted: () => void;
+  itemsActive: number;
 }
 
 export const Filter: FC<FilterProps> = ({
   handleChooseFilter,
   buttonChoose,
   handleClearCompleted,
+  itemsActive,
 }) => {
   return (
-    <div>
-      <p>2 items left</p>
-      <ul>
+    <BottomPanel>
+      <BottomText>{itemsActive} items left</BottomText>
+      <ButtonsList>
         {buttons.map((button) => (
           <li key={button}>
-            <button
+            <ButtonFilter
               type="button"
-              data-active={button === buttonChoose ? "active" : "non-active"}
+              className={button === buttonChoose ? "active" : "non-active"}
               onClick={() => handleChooseFilter(button)}
             >
               {button}
-            </button>
+            </ButtonFilter>
           </li>
         ))}
-      </ul>
-      <button type="button" onClick={handleClearCompleted}>
+      </ButtonsList>
+      <ButtonFilter type="button" onClick={handleClearCompleted}>
         Clear completed
-      </button>
-    </div>
+      </ButtonFilter>
+    </BottomPanel>
   );
 };

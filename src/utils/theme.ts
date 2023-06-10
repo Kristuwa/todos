@@ -1,19 +1,13 @@
-interface Theme {
-  color: {
-    primaryColor: string;
-    secondaryColor: string;
-    bg: string;
-    bgBtn: string;
-    accentColor: string;
-  };
-}
+import { Theme } from "../types/types";
 
 export const theme: Theme = {
   color: {
-    primaryColor: "#EBD8FF",
-    secondaryColor: "#373737",
-    bg: "#a1a1a1",
-    bgBtn: "#EBD8FF",
-    accentColor: "#5CD3A8",
+    primaryColor: "#f49a75",
+    secondaryColor: "#212121",
+    thirdColor: "#a1a1a1",
+    bg: "#d7cccc",
+    bgSecondary: "#ffffff",
+    btnColor: "#645c58",
+    accentColor: "#f49a75",
   },
 };

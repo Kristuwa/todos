@@ -1,18 +1,13 @@
-import { DefaultTheme, createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import "modern-normalize";
-
-interface Theme extends DefaultTheme {
-  color: {
-    primaryColor: string;
-    bg: string;
-  };
-}
+import "typeface-montserrat";
+import { Theme } from "./types/types";
 
 export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    color: ${(p: { theme: Theme }) => p.theme.color.primaryColor};
+    font-family: Montserrat, sans-serif;
+    color: ${(p: { theme: Theme }) => p.theme.color.secondaryColor};
     background-color: ${(p: { theme: Theme }) => p.theme.color.bg};
   }
   code {
@@ -30,5 +25,8 @@ export const GlobalStyle = createGlobalStyle`
   }
   a {
     text-decoration: none
+  }
+  button {
+	cursor:pointer;
   }
 `;

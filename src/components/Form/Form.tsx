@@ -1,8 +1,9 @@
 import { FC } from "react";
 import * as React from "react";
-import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
+import { Formik, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import { FormValues } from "../../types/types";
+import { FormContainer, FieldContainer, ButtonSubmit } from "./Form.styled";
 
 const validationSchema = Yup.object().shape({
   todo: Yup.string().required("Todo is required"),
@@ -24,11 +25,15 @@ export const FormTodo: FC<FormProps> = ({ handleSubmit }) => {
       onSubmit={handleSubmit}
       validationSchema={validationSchema}
     >
-      <Form>
-        <Field id="todo" name="todo" placeholder="What needs to be done?" />
+      <FormContainer>
+        <FieldContainer
+          id="todo"
+          name="todo"
+          placeholder="What needs to be done?"
+        />
         <ErrorMessage name="todo" />
-        <button type="submit">Submit</button>
-      </Form>
+        <ButtonSubmit type="submit">Submit</ButtonSubmit>
+      </FormContainer>
     </Formik>
   );
 };
