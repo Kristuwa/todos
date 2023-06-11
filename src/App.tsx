@@ -7,7 +7,6 @@ import { FormTodo } from "./components/Form/Form";
 import { TodoList } from "./components/TodoList/TodoList";
 import { FormValues, Todo } from "./types/types";
 import { FormikHelpers } from "formik";
-import { nanoid } from "nanoid";
 import { Filter } from "./components/Filter/Filter";
 import { Title, MainContainer, TextContainer } from "./App.styled";
 
@@ -17,7 +16,11 @@ const App: FC = () => {
 
   const handleSubmit = useCallback(
     (values: FormValues, formikHelpers: FormikHelpers<FormValues>) => {
-      const newTodo: Todo = { id: nanoid(), todo: values.todo, isDone: false };
+      const newTodo: Todo = {
+        id: Date.now().toString(),
+        todo: values.todo,
+        isDone: false,
+      };
       setTodosList((prevState: Todo[]) => [...prevState, newTodo]);
       formikHelpers.resetForm();
     },

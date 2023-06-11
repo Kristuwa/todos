@@ -14,7 +14,6 @@
     "@types/styled-components": "^5.1.26",
     "formik": "^2.4.1",
     "modern-normalize": "^2.0.0",
-    "nanoid": "^4.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
@@ -26,12 +25,13 @@
     "yup": "^1.2.0"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "version"
+    "@babel/plugin-proposal-private-property-in-object": "version",
+    "jest": "^27.5.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --detectOpenHandles",
     "eject": "react-scripts eject",
     "lint:ts": "eslint src/**/*.{ts,tsx}"
   },
