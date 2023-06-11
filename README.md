@@ -16,5 +16,4 @@ This is an application for recording tasks that need to be done. You enter a tas
 - TypeScript,
 - Styled-components,
 - Formik,
-- Yup,
-- React-icons.
+- Yup.

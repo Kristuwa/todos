@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Theme } from "../../types/types";
 
 export const Item = styled.li`
   display: flex;
@@ -9,24 +8,10 @@ export const Item = styled.li`
   padding: 10px;
 `;
 
-export const ChooseTodo = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+export const ChooseTodo = styled.input`
+  cursor: pointer;
   width: 30px;
   height: 30px;
-
-  border: 1px solid #a1a1a1;
-  border-radius: 15px;
-  background-color: transparent;
-
-  transition: border-color 500ms linear;
-
-  &:hover,
-  &:focus {
-    border-color: ${(p: { theme: Theme }) => p.theme.color.accentColor};
-  }
 `;
 
 export const TodoText = styled.p`
